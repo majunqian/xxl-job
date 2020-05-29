@@ -67,6 +67,12 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
     @Value("${xxl.job.logretentiondays}")
     private int logretentiondays;
 
+    @Value("${wechat.host}")
+    private String wechatHost;
+
+    @Value("${wechat.port}")
+    private int wechatPort;
+
     // dao, service
 
     @Resource
@@ -121,6 +127,14 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
             return -1;  // Limit greater than or equal to 7, otherwise close
         }
         return logretentiondays;
+    }
+
+    public String getWechatHost() {
+        return wechatHost;
+    }
+
+    public int getWechatPort() {
+        return wechatPort;
     }
 
     public XxlJobLogDao getXxlJobLogDao() {

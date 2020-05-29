@@ -21,6 +21,8 @@ public class XxlJobInfo {
 	private String author;		// 负责人
 	private String alarmEmail;	// 报警邮件
 
+	private String alarmWechat;	// 报警企业微信
+
 	private String executorRouteStrategy;	// 执行器路由策略
 	private String executorHandler;		    // 执行器，任务Handler名称
 	private String executorParam;		    // 执行器，任务参数
@@ -102,6 +104,14 @@ public class XxlJobInfo {
 
 	public void setAlarmEmail(String alarmEmail) {
 		this.alarmEmail = alarmEmail;
+	}
+
+	public String getAlarmWechat() {
+		return alarmWechat;
+	}
+
+	public void setAlarmWechat(String alarmWechat) {
+		this.alarmWechat = alarmWechat;
 	}
 
 	public String getExecutorRouteStrategy() {

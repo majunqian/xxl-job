@@ -87,6 +87,7 @@
 					                  	<th name="updateTime" >updateTime</th>
 					                  	<th name="author" >${I18n.jobinfo_field_author}</th>
 					                  	<th name="alarmEmail" >${I18n.jobinfo_field_alarmemail}</th>
+                                        <th name="alarmWechat" >${I18n.jobinfo_field_alarmwechat}</th>
 					                  	<th name="triggerStatus" >${I18n.system_status}</th>
 					                  	<th>${I18n.system_opt}</th>
 					                </tr>
@@ -171,8 +172,8 @@
 					<div class="form-group">
                         <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_author}<font color="red">*</font></label>
                         <div class="col-sm-4"><input type="text" class="form-control" name="author" placeholder="${I18n.system_please_input}${I18n.jobinfo_field_author}" maxlength="50" ></div>
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarmemail}<font color="black">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="alarmEmail" placeholder="${I18n.jobinfo_field_alarmemail_placeholder}" maxlength="100" ></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarmwechat}<font color="black">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="alarmWechat" placeholder="${I18n.jobinfo_field_alarmwechat_placeholder}" maxlength="100" ></div>
 					</div>
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_executorparam}<font color="black">*</font></label>
@@ -367,8 +368,8 @@ exit 0
                     <div class="form-group">
                         <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_author}<font color="red">*</font></label>
                         <div class="col-sm-4"><input type="text" class="form-control" name="author" placeholder="${I18n.system_please_input}${I18n.jobinfo_field_author}" maxlength="50" ></div>
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarmemail}<font color="black">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="alarmEmail" placeholder="${I18n.jobinfo_field_alarmemail_placeholder}" maxlength="100" ></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarmwechat}<font color="black">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="alarmWechat" placeholder="${I18n.jobinfo_field_alarmwechat_placeholder}" maxlength="100" ></div>
                     </div>
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_executorparam}<font color="black">*</font></label>

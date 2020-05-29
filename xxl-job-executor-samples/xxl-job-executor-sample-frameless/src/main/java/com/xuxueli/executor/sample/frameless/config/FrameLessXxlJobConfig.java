@@ -5,9 +5,12 @@ import com.xuxueli.executor.sample.frameless.jobhandler.DemoJobHandler;
 import com.xuxueli.executor.sample.frameless.jobhandler.HttpJobHandler;
 import com.xuxueli.executor.sample.frameless.jobhandler.ShardingJobHandler;
 import com.xxl.job.core.executor.XxlJobExecutor;
+import com.xxl.job.core.log.XxlJobLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
@@ -74,9 +77,17 @@ public class FrameLessXxlJobConfig {
     public static Properties loadProperties(String propertyFileName) {
         InputStreamReader in = null;
         try {
-            ClassLoader loder = Thread.currentThread().getContextClassLoader();
+            String confPath = "." + File.separator + propertyFileName;
+            File file = new File(confPath);
+            if(file.exists()){
+                logger.info("Use "+confPath);
+                in = new InputStreamReader(new FileInputStream(file),"UTF-8");
+            }else {
+                logger.info("Use "+propertyFileName);
+                ClassLoader loder = Thread.currentThread().getContextClassLoader();
+                in = new InputStreamReader(loder.getResourceAsStream(propertyFileName), "UTF-8");
+            }
 
-            in = new InputStreamReader(loder.getResourceAsStream(propertyFileName), "UTF-8");;
             if (in != null) {
                 Properties prop = new Properties();
                 prop.load(in);

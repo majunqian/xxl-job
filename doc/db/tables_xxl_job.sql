@@ -16,6 +16,7 @@ CREATE TABLE `xxl_job_info` (
   `update_time` datetime DEFAULT NULL,
   `author` varchar(64) DEFAULT NULL COMMENT '作者',
   `alarm_email` varchar(255) DEFAULT NULL COMMENT '报警邮件',
+  `alarm_wechat` varchar(255) DEFAULT NULL COMMENT '报警微信',
   `executor_route_strategy` varchar(50) DEFAULT NULL COMMENT '执行器路由策略',
   `executor_handler` varchar(255) DEFAULT NULL COMMENT '执行器任务handler',
   `executor_param` varchar(512) DEFAULT NULL COMMENT '执行器任务参数',

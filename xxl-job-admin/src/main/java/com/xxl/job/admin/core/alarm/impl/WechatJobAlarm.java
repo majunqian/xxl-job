@@ -41,7 +41,7 @@ public class WechatJobAlarm implements JobAlarm {
             // alarmContent
             String alarmContent = "Alarm Job LogId=" + jobLog.getId();
             if (jobLog.getTriggerCode() != ReturnT.SUCCESS_CODE) {
-                alarmContent += " " + jobLog.getTriggerMsg();
+                alarmContent += " " + jobLog.getTriggerMsg().replaceAll("<br>","\\\\n");
             }
             if (jobLog.getHandleCode() > 0 && jobLog.getHandleCode() != ReturnT.SUCCESS_CODE) {
                 alarmContent += " " + jobLog.getHandleMsg();

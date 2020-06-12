@@ -23,7 +23,15 @@ public class CommandJobHandler extends IJobHandler {
         BufferedReader bufferedReader = null;
         try {
             // command process
-            Process process = Runtime.getRuntime().exec(command);
+            Process process;
+            String osName = System.getProperty("os.name");
+            if(osName.startsWith("Windows")){
+                process = Runtime.getRuntime().exec(command);
+            }
+            else{
+                // 对于类unix系统，修改以支持复杂命令比如管道，重定向 2020年6月12日 13:41:53
+                process = Runtime.getRuntime().exec(new String []{"/bin/sh", "-c", command});
+            }
             BufferedInputStream bufferedInputStream = new BufferedInputStream(process.getInputStream());
             bufferedReader = new BufferedReader(new InputStreamReader(bufferedInputStream));
 

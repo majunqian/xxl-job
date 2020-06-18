@@ -3,6 +3,9 @@
 
 PROGNAME="xxl-job-admin-2.2.1-SNAPSHOT.jar"
 SHORTNAME="job-admin"
+JOB_ADMIN_HOME=${HOME}/xxljob/
+export LOG_PATH=${JOB_ADMIN_HOME}
+export SPRING_CONFIG_LOCATION=${JOB_ADMIN_HOME}
 
 start (){
   status
@@ -11,13 +14,13 @@ start (){
     exit 0
   fi
 
-  if [ -d "$HOME/xxljob/jdk1.8.0_251" ]
+  if [ -d "${JOB_ADMIN_HOME}/jdk1.8.0_251" ]
   then
-    export JAVA_HOME=$HOME/xxljob/jdk1.8.0_251
+    export JAVA_HOME=${JOB_ADMIN_HOME}/jdk1.8.0_251
     export JRE_HOME=$JAVA_HOME/jre
     export PATH=$JAVA_HOME/bin:$PATH
   fi
-  nohup java -Dfile.encoding=UTF-8 -jar ${PROGNAME} >/dev/null 2>&1  &
+  nohup java -Dfile.encoding=UTF-8 -jar ${JOB_ADMIN_HOME}${PROGNAME} >/dev/null 2>&1  &
 
   status
   if [ "$?" -ne "0" ]
